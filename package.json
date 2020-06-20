@@ -1,5 +1,5 @@
 {
-  "name": "react-frappe-charts",
+  "name": "@switz/react-frappe-charts",
   "version": "2.0.0",
   "license": "MIT",
   "repository": "https://github.com/sheshbabu/react-frappe-charts",
@@ -21,7 +21,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "frappe-charts": "1.2.4"
+    "frappe-charts": "1.5.0"
   },
   "peerDependencies": {
     "react": ">= 16.8.0",

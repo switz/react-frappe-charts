@@ -1,4 +1,3 @@
-/// <reference types="react" />
 declare type ChartType = "line" | "bar" | "axis-mixed" | "pie" | "percentage" | "heatmap";
 declare type AxisMode = "span" | "tick";
 declare type ChartData = {

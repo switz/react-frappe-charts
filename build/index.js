@@ -1,11 +1,16 @@
-import React from "react";
-import { Chart } from "frappe-charts/dist/frappe-charts.min.esm";
-export default function ReactFrappeChart(props) {
-    const ref = React.useRef(null);
-    const chart = React.useRef(null);
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importDefault(require("react"));
+const frappe_charts_min_esm_1 = require("frappe-charts/dist/frappe-charts.min.esm");
+function ReactFrappeChart(props) {
+    const ref = react_1.default.useRef(null);
+    const chart = react_1.default.useRef(null);
     const { onDataSelect } = props;
-    React.useEffect(() => {
-        chart.current = new Chart(ref.current, Object.assign({ isNavigable: onDataSelect !== undefined }, props));
+    react_1.default.useEffect(() => {
+        chart.current = new frappe_charts_min_esm_1.Chart(ref.current, Object.assign({ isNavigable: onDataSelect !== undefined }, props));
         if (onDataSelect) {
             chart.current.parent.addEventListener("data-select", (e) => {
                 e.preventDefault();
@@ -13,8 +18,9 @@ export default function ReactFrappeChart(props) {
             });
         }
     }, []);
-    React.useEffect(() => {
+    react_1.default.useEffect(() => {
         chart.current.update(props.data);
     }, [props.data]);
-    return React.createElement("div", { ref: ref });
+    return react_1.default.createElement("div", { ref: ref });
 }
+exports.default = ReactFrappeChart;
